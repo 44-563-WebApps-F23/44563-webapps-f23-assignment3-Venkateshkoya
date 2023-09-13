@@ -21,11 +21,11 @@
             <li>Beavertail</li>
         </ul>
         <a href="mystats.html">mystats</a>
-
+        <img src = "fish-mandi-this-recipe.jpg" text ="image of fish mandi">
         <hr>
         <h3>Recommended Sports</h3>
         <p>If you are looking for exciting sports to play. I would like to recommend these.</p>
-        <table>
+        <table border="1.5">
             <tr>
                 <th>Name of the sport</th>
                 <th>Reason for recommendation</th>
@@ -56,15 +56,36 @@
         <hr>
         <h4>Code Display</h4>
         <blockquote>
-            <p>Why is stackover flow so popular?</p>
-           <a href ="https://womaneng.com/why-is-stack-overflow-so-important-for-developers/#:~:text=Stack%20Overflow%20is%20important%20for,other%20to%20solve%20coding%20problems">link to stackover flow</a>
+            <p>Shuffle a container's DOM elements but not all in javascript?</p>
+           <a href ="https://stackoverflow.com/questions/71617327/shuffle-a-containers-dom-elements-but-not-all-in-javascript">link to stackover flow</a>
         </blockquote>
 
         <pre>
-            <div class="myBox">
-                blah blah blah.
-                <a href="http://google.com">link</a>
-              </div>
+            (function($){
+ 
+                $.fn.shuffle = function() {
+             
+                    var allElems = this.get(),
+                        getRandom = function(max) {
+                            return Math.floor(Math.random() * max);
+                        },
+                        shuffled = $.map(allElems, function(){
+                            var random = getRandom(allElems.length),
+                                randEl = $(allElems[random]).clone(true)[0];
+                            allElems.splice(random, 1);
+                            return randEl;
+                       });
+             
+                    this.each(function(i){
+                        $(this).replaceWith($(shuffled[i]));
+                    });
+             
+                    return $(shuffled);
+             
+                };
+             
+            })(jQuery);
         </pre>
+        <a href="https://css-tricks.com/snippets/jquery/shuffle-dom-elements/">Link for CSS Code snippet</a>
     </body>
 </html>
